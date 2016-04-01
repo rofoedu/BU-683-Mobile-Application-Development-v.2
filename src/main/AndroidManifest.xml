@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cs683.esports_app">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- home screen-->
+        <activity android:name=".startScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Supported Games main page-->
+        <activity android:name=".SupportedGamesGeneral"
+            android:label="Supported Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.startScreen" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Supported Games: PC-->
+        <activity android:name=".SupportedGamesPC"
+            android:label="PC Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.SupportedGamesGeneral" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Supported Games: PS4-->
+        <activity android:name=".SupportedGamesPS4"
+            android:label="Playstation 4 Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.SupportedGamesGeneral" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+       <!-- Supported Games: Wii U-->
+        <activity android:name=".SupportedGamesWiiU"
+            android:label="Wii U Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.SupportedGamesGeneral" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Supported Games: Xbox One-->
+        <activity android:name=".SupportedGamesXboxOne"
+            android:label="Xbox One Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.SupportedGamesGeneral" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Supported Games: Mobile/Handheld-->
+        <activity android:name=".SupportedGamesMH"
+            android:label="Mobile / Handlheld Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.SupportedGamesGeneral" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            </activity>
+
+        <!-- Supported Games: Multi-Platform-->
+        <activity android:name=".SupportedGamesMulti"
+            android:label="Multi-Platform Games"
+            android:parentActivityName=".SupportedGamesGeneral">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.SupportedGamesGeneral" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- login activity-->
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".startScreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.startScreen" />
+        </activity>
+    </application>
+
+</manifest>

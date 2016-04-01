@@ -1,0 +1,23 @@
+<resources>
+    <!-- general use strings -->
+    <string name="app_name">PassTheSticks</string>
+    <string name="supported_game_general">Currently Supported Games</string>
+    <string name="tagline">Finding your next opponent, one tap at a time.</string>
+    <string name="next_page">Next</string>
+    <string name="console_selection">Choose a console.</string>
+    <string name="login">Sign In / Register</string>
+    <string name="title_activity_login">Sign In</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign In / Register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>
