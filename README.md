@@ -1,4 +1,4 @@
-# BU-683-Mobile-Application-Development-v.2
+# BU-683-Mobile-Application-Development-v.2 (eSports application)
 Revised + recreated repository for same Android development class.
 
 Android Studio code for Mobile App. Development class.
