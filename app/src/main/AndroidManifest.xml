@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
 
     <application
         android:allowBackup="true"
@@ -26,7 +28,7 @@
         <!-- Preferences page -->
         <activity
             android:name=".Preferences"
-            android:label="Preferred Games"
+            android:label="Supported Games"
             android:parentActivityName=".startScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -38,22 +40,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!-- Preferences Output page-->
-        <activity
-            android:name=".PreferencesOutput"
-            android:label="Preferred Games"
-            android:parentActivityName=".Preferences">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.cs683.esports_app.startScreen" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-        </activity>
+        <!-- Preferences Output page -->
 
         <!-- Supported Games main page -->
         <activity
@@ -167,7 +154,7 @@
             </intent-filter>
         </activity>
 
-        <!-- login activity -->
+        <!-- login activity (auto-gen)-->
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
@@ -177,7 +164,15 @@
                 android:value="com.cs683.esports_app.startScreen" />
         </activity>
 
-
+        <!-- settings activity (auto-gen)-->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".startScreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs683.esports_app.startScreen" />
+        </activity>
     </application>
 
 </manifest>

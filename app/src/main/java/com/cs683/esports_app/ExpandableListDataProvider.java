@@ -21,7 +21,7 @@ public class ExpandableListDataProvider {
                 new HashMap<String, List<String>>();
 
         List<String> selectGamesList = new ArrayList<String>();
-        selectGamesList.add("Search for an unlisted game (leads to new page).");
+        selectGamesList.add("Tap to view more eSports games (leads to new page).");
 
         List<String> pcGamesList = new ArrayList<String>();
         pcGamesList.add("Counter-Strike: Global Operatives (CS:GO)");
@@ -30,6 +30,7 @@ public class ExpandableListDataProvider {
         pcGamesList.add("StarCraft II");
 
         List<String> ps4GamesList = new ArrayList<String>();
+        ps4GamesList.add("Guilty Gear Xrd -REVELATOR-");
         ps4GamesList.add("Street Fighter V");
 
         List<String> wiiUGamesList = new ArrayList<String>();
@@ -60,6 +61,7 @@ public class ExpandableListDataProvider {
         multiGamesList.add("Rocket League (PC, PS4, XB1)");
         multiGamesList.add("Skullgirls (PC, PS4)");
         multiGamesList.add("Smite (PC, PS4, XB1)");
+        multiGamesList.add("Ultimate Marvel vs. Capcom 3 (PS4, XB1");
         multiGamesList.add("World of Tanks (PC, XB1)");
 
         platformDetails.put("Extras", selectGamesList);

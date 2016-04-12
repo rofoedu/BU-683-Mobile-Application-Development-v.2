@@ -26,46 +26,18 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20px"
-        android:text="Choose games that PassTheSticks will save in your preferences: " />
+        android:text="Games currently supported by large eSports communities: " />
 
     <ExpandableListView
         android:id="@+id/expandableListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/accept_button"
         android:layout_alignLeft="@+id/prefs_in_label"
         android:layout_alignStart="@+id/prefs_in_label"
-        android:layout_marginBottom="36dp"
         android:divider="#a4c739"
         android:dividerHeight="0.5sp"
-        android:paddingTop="70dp" />
+        android:paddingTop="70dp"
+        android:layout_alignParentBottom="true" />
 
-
-    <Button
-        android:id="@+id/accept_button"
-        android:layout_width="119dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Save" />
-
-    <Button
-        android:id="@+id/prefsLoad"
-        android:layout_width="117dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/accept_button"
-        android:layout_toStartOf="@+id/accept_button"
-        android:text="Load" />
-
-    <Button
-        android:id="@+id/prefsView"
-        android:layout_width="119dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/prefsLoad"
-        android:layout_toStartOf="@+id/prefsLoad"
-        android:text="View" />
 
 </RelativeLayout>

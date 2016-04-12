@@ -17,7 +17,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/supportedGamesMulti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -34,6 +34,7 @@
 \nRocket League (PC, PS4, XB1)\n
 \nSkullgirls (PC, PS4)\n
 \nSmite (PC, PS4, XB1)\n
+\nUltimate Marvel vs. Capcom 3 (PS4, XB1)\n
 \nWorld of Tanks (PC, XB1)
 "
             android:textAppearance="?android:attr/textAppearanceMedium"

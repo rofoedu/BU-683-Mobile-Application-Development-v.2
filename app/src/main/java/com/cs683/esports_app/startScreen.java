@@ -1,10 +1,17 @@
 package com.cs683.esports_app;
 
+
+/*code for section adopted from:
+* http://www.i-programmer.info/programming/android/8521-android-adventures-menus-a-the-action-bar.html?start=1
+* */
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,7 +21,27 @@ public class startScreen extends AppCompatActivity {
     public static final String TAG = "StateChange";
     Button button_supported_games;
     Button buttonLogin;
-    Button buttonPrefs;
+    Button buttonEvents;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+               Intent settings = new Intent(this, SettingsActivity.class);
+                this.startActivity(settings);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +49,18 @@ public class startScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
         Log.i(TAG, "onCreate");
 
+
         //button code and concepts taken from: youtu.be/z-gQKEjk7Wk
         button_supported_games = (Button) findViewById(R.id.buttonGameGeneral);
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        buttonPrefs = (Button) findViewById(R.id.buttonPrefs);
+        buttonEvents = (Button) findViewById(R.id.buttonEvents);
 
-//button click that goes to supported games
+//button click that goes to preferences
         button_supported_games.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(startScreen.this, SupportedGamesGeneral.class);
+                Intent i = new Intent(startScreen.this, Preferences.class);
                 startActivity(i);
             }
         });
@@ -46,15 +74,15 @@ public class startScreen extends AppCompatActivity {
             }
         });
 
-//button click that goes to preferences page
-        buttonPrefs.setOnClickListener(new View.OnClickListener() {
+
+//button click that goes to espn eSports event calendar
+        buttonEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent k = new Intent(startScreen.this, Preferences.class);
-                startActivity(k);
+                Intent l = new Intent(Intent.ACTION_VIEW, Uri.parse("http://espn.go.com/esports/story/_/id/14556983/esports-calendar-top-events-league-legends-dota-2-hearthstone-more"));
+                    startActivity(l);
             }
         });
-
     }
 
     @Override

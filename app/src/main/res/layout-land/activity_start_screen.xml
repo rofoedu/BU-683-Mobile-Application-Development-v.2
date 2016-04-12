@@ -30,16 +30,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonGameGeneral"
-        android:layout_alignLeft="@+id/buttonPrefs"
-        android:layout_alignStart="@+id/buttonPrefs"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/buttonPrefs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonGameGeneral"
+        android:text="Events"
+        android:id="@+id/buttonEvents"
         android:layout_centerHorizontal="true"
-        android:text="Preferred Games" />
+        android:layout_below="@+id/buttonGameGeneral" />
 
 </RelativeLayout>

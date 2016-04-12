@@ -11,13 +11,14 @@
     tools:context="com.cs683.esports_app.SupportedGamesPS4">
 
     <TextView
-        android:id="@+id/StreetFighterV"
+        android:id="@+id/supportedGamesPS4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:text="Street Fighter V"
+        android:text="Guilty Gear Xrd -REVELATOR-\n
+        \nStreet Fighter V"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
         android:textSize="28dp" />

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.List;
@@ -107,7 +108,7 @@ public class platformExpandableListAdapter extends BaseExpandableListAdapter {
 
     //how child items will appear in the list
     @Override
-    public View getChildView(int parent, int child, boolean isLastChild, View convertView, ViewGroup parentView) {
+    public View getChildView(final int parent, final int child, boolean isLastChild, View convertView, ViewGroup parentView) {
 
         String child_title = (String) getChild(parent, child);
         if (convertView == null) {

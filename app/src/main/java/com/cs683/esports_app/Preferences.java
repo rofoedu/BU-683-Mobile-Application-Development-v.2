@@ -1,17 +1,13 @@
 package com.cs683.esports_app;
 
+
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
-
-import java.io.Serializable;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,8 +25,6 @@ import java.util.List;
 public class Preferences extends AppCompatActivity {
 
     //declaring variables
-    SharedPreferences.Editor fd;
-    SharedPreferences feedPref;
     HashMap<String, List<String>> platformsHash;
     List<String> gamesList;
     ExpandableListView expGames;
@@ -38,9 +32,10 @@ public class Preferences extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
+
 
         //linking Expandable list view here to widget/container in xml file
         expGames = (ExpandableListView) findViewById(R.id.expandableListView);
@@ -81,26 +76,23 @@ public class Preferences extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, final int childPosition, long id) {
 
-                feedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                fd = feedPref.edit();
-
+                Toast.makeText(getBaseContext(), "Group "+groupPosition+", item "+childPosition,Toast.LENGTH_SHORT).show();
                 Toast.makeText(getBaseContext(), "Tapped: " + platformsHash.get((gamesList).get(groupPosition)).get(childPosition)
-                        + " from the " + gamesList.get(groupPosition) + " collection", Toast.LENGTH_LONG).show();
+                        + " from the " + gamesList.get(groupPosition) + " collection.", Toast.LENGTH_SHORT).show();
+
+                if (groupPosition == 2) {
+                    if (childPosition == 0) {
+
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://en.wikipedia.org/wiki/List_of_esports_games"));
+                        startActivity(browserIntent);
+                    }
+                }
+
                 return false;
             }
         });//setOnChildClickListener
 
-        Button prefsView = (Button) findViewById(R.id.prefsView);
-
-        if (prefsView != null) {
-            prefsView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(Preferences.this, PreferencesOutput.class);
-                    startActivity(i);
-                }//prefsView onClick
-            });
-        }//if PrefsView isnt null
 
     }//onCreate
 }//prefs class
