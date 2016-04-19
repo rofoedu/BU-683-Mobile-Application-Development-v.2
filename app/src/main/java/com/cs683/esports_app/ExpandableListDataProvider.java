@@ -21,7 +21,8 @@ public class ExpandableListDataProvider {
                 new HashMap<String, List<String>>();
 
         List<String> selectGamesList = new ArrayList<String>();
-        selectGamesList.add("Tap to view more eSports games (leads to new page).");
+        selectGamesList.add("Tap to view more eSports games.");
+        selectGamesList.add("Wikipedia list of eSports games");
 
         List<String> pcGamesList = new ArrayList<String>();
         pcGamesList.add("Counter-Strike: Global Operatives (CS:GO)");
@@ -47,7 +48,7 @@ public class ExpandableListDataProvider {
         xb1GamesList.add("Titanfall");
 
         List<String> mhGamesList = new ArrayList<String>();
-        mhGamesList.add("Pokemon X/Y (Nintendo 3DS");
+        mhGamesList.add("Pokemon X/Y (Nintendo 3DS)");
 
         List<String> multiGamesList = new ArrayList<String>();
         multiGamesList.add("Call of Duty: Black Ops III (PS4, XB1)");
@@ -55,13 +56,13 @@ public class ExpandableListDataProvider {
         multiGamesList.add("FIFA 16 (PC, PS4, XB1)");
         multiGamesList.add("Hearthstone: Heroes of Warcraft (mobile, PC)");
         multiGamesList.add("Madden 16 (PS4, XB1, Wii U)");
-        multiGamesList.add("Mortal Kombat (PC, PS4, XB1)");
+        multiGamesList.add("Mortal Kombat X (PC, PS4, XB1)");
         multiGamesList.add("NBA 2k16 (PS4, XB1)");
         multiGamesList.add("NHL 16 (PS4, XB1)");
         multiGamesList.add("Rocket League (PC, PS4, XB1)");
         multiGamesList.add("Skullgirls (PC, PS4)");
         multiGamesList.add("Smite (PC, PS4, XB1)");
-        multiGamesList.add("Ultimate Marvel vs. Capcom 3 (PS4, XB1");
+        multiGamesList.add("Ultimate Marvel vs. Capcom 3 (PS4, XB1)");
         multiGamesList.add("World of Tanks (PC, XB1)");
 
         platformDetails.put("Extras", selectGamesList);

@@ -38,7 +38,15 @@
         android:layout_height="wrap_content"
         android:text="Events"
         android:id="@+id/buttonEvents"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/buttonGameGeneral" />
+        android:layout_below="@+id/teamRankings"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Rankings"
+        android:id="@+id/teamRankings"
+        android:layout_below="@+id/buttonGameGeneral"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

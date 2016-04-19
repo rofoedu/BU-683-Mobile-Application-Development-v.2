@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20px"
-        android:text="Games currently supported by large eSports communities: " />
+        android:text="Games currently supported by large eSports communities.  Tapping an item opens a web browser window. " />
 
     <ExpandableListView
         android:id="@+id/expandableListView"

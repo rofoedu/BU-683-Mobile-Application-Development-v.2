@@ -13,10 +13,10 @@
         android:id="@+id/buttonGameGeneral"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/supported_game_general"
         android:layout_below="@+id/buttonLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:text="@string/supported_game_general" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/taglineHome"
@@ -30,9 +30,9 @@
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/taglineHome"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="46dp"
         android:text="@string/login"
+        android:layout_below="@+id/taglineHome"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -40,8 +40,17 @@
         android:layout_height="wrap_content"
         android:text="Events"
         android:id="@+id/buttonEvents"
-        android:layout_marginTop="39dp"
+        android:layout_below="@+id/teamRankings"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/buttonGameGeneral" />
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Rankings"
+        android:id="@+id/teamRankings"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/buttonGameGeneral"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
