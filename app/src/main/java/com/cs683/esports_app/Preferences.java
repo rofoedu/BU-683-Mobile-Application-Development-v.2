@@ -1,10 +1,19 @@
 package com.cs683.esports_app;
 
 
+import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -23,11 +32,16 @@ import java.util.List;
 *
 *       4/17 update
 *  http://android.okhelp.cz/start-activity-from-listview-item-click-android-example/
+*
+*  4/24 update
+*  http://stackoverflow.com/questions/4849690/start-an-application-from-notification-bar-in-android?lq=1
+* http://stackoverflow.com/questions/15120821/remove-notification-after-clicking
 * */
 
 public class Preferences extends AppCompatActivity {
 
     //declaring variables
+    public static final String TAG = "StateChange";
     HashMap<String, List<String>> platformsHash;
     List<String> gamesList;
     ExpandableListView expGames;
@@ -37,6 +51,7 @@ public class Preferences extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
+        Log.i(TAG, "Preferences: onCreate: Preferences");
 
         //linking Expandable list view here to widget/container in xml file
         expGames = (ExpandableListView) findViewById(R.id.expandableListView);
@@ -277,6 +292,83 @@ public class Preferences extends AppCompatActivity {
         });//setOnChildClickListener
 
     }//onCreate
+    // ***********************************************************************
+
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "Preferences: onSaveInstanceState");
+    }
+    // ***********************************************************************
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(TAG, "Preferences: onRestoreInstanceState");
+    }
+    // ***********************************************************************
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "Preferences: onStart");
+    }
+    // ***********************************************************************
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "Preferences: onResume");
+    }
+    // ***********************************************************************
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "Preferences: onPause");
+    }
+    // ***********************************************************************
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "Preferences: onStop");
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.controller_v1)
+                .setContentTitle("PassTheSticks")
+                .setContentText("Click to return to the Supported Games screen.")
+                .setAutoCancel(true);
+
+        Intent resultIntent = new Intent(this, Preferences.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(startScreen.class);
+        stackBuilder.addNextIntent(resultIntent);
+
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+        mBuilder.setContentIntent(resultPendingIntent);
+
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(0, mBuilder.build());
+
+
+    }
+    // ***********************************************************************
+    private void toast(String aToast) {
+        Toast.makeText(getApplicationContext(), aToast, Toast.LENGTH_LONG).show();
+    }
+    // ***********************************************************************
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "Preferences: onRestart");
+    }
+    // ***********************************************************************
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "Preferences: onDestroy");
+    }
+
 }//prefs class
 
 

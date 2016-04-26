@@ -1,6 +1,7 @@
 package com.cs683.esports_app;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -21,6 +22,10 @@ import java.util.List;
 * https://youtu.be/BkazaAeeW1Q
 * https://youtu.be/_h94Kqyc-Ag
 * https://youtu.be/oPGdPQvqPVM
+*
+* 4/24 update
+*
+* http://stackoverflow.com/questions/25837449/setbackgroundcolor-with-hex-color-codes-androidstudio
 * */
 public class platformExpandableListAdapter extends BaseExpandableListAdapter {
 
@@ -102,6 +107,7 @@ public class platformExpandableListAdapter extends BaseExpandableListAdapter {
         TextView parentTextView = (TextView) convertView.findViewById(R.id.parent_txt);
         parentTextView.setTypeface(null, Typeface.BOLD);
         parentTextView.setText(parent_title);
+        parentTextView.setTextColor(Color.parseColor("#ffffff"));
 
         return convertView;
     }
